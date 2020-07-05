@@ -1,15 +1,19 @@
-import React from "react";
+import * as React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-
 import { requestApiData } from "./actions";
 
-class Home extends React.Component {
+type MyProps = {
+  requestApiData: ()=>{},
+  data: any,
+};
+type MyState = { value: string };
+class Home extends React.Component<MyProps, MyState> {
   componentDidMount() {
     this.props.requestApiData();
   }
 
-  person = (x, i) =>
+  private person = (x, i) =>
     <div key={x.id.value}>
       <h1>
         {x.gender}
