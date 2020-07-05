@@ -1,7 +1,7 @@
 import * as React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { requestApiData } from "./actions";
+import { requestApiData } from "../actions";
 
 type MyProps = {
   requestApiData: ()=>{},
@@ -13,25 +13,11 @@ class Home extends React.Component<MyProps, MyState> {
     this.props.requestApiData();
   }
 
-  private person = (x, i) =>
-    <div key={x.id.value}>
-      <h1>
-        {x.gender}
-      </h1>
-      <h1>
-        {x.name.first}
-      </h1>
-      <h1>
-        {x.name.last}
-      </h1>
-      <img src={x.picture.medium} />
-    </div>;
 
   render() {
     const { results = [] } = this.props.data;
     return results.length
-      ? <h1>
-          {results.map(this.person)}
+      ? <h1>Product
         </h1>
       : <h1>loading...</h1>;
   }
