@@ -23,8 +23,9 @@
     "typescript": "^3.9.6"
   },
   "scripts": {
-    "start": "parcel ./src/index.html && cp ./src/manifest.json ./dist/manifest.json",
-    "build": "parcel build ./src/index.html",
+    "start": "yarn watch && live-server dist/",
+    "build": "parcel build ./src/index.tsx ./src/index.scss",
+    "watch": "parcel watch ./src/index.tsx ./src/index.scss",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

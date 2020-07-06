@@ -15,8 +15,8 @@ export default class Header extends React.Component {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <NavLink to="/#products">Products</NavLink>
-              <NavLink to="/#products1">Products</NavLink>
+              <NavLink to="/products">Products</NavLink>
+              <NavLink to="/products1">Products</NavLink>
             </Nav>
             <Form inline>
               <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -27,11 +27,11 @@ export default class Header extends React.Component {
         <Switch>
            
           {/* TODO data={data} */}
-          <Route path="products" component={Products} />
-          <Route path="/#products1" component={Products} />
+          <Route path="/products" component={Products} />
+          <Route path="/products1" component={Products} />
           <Route exact path="/" component={Home}  />
         </Switch>
-        <Link to="/#products">Link to Hash Fragment</Link>
+        <Link to="/products">Link to Hash Fragment</Link>
       </HashRouter>
     );
   }
